@@ -1,4 +1,11 @@
 (function($) {
+  $.extend($.expr[':'], {
+    'containsi': function(elem, i, match, array) {
+      return $(elem).text().toLowerCase()
+        .indexOf((match[3] || "").toLowerCase()) >= 0;
+    }
+  });
+
   var Search = function(block) {
     this.callbacks = {};
     block(this);
@@ -11,7 +18,7 @@
 
   function query(selector) {
     if (val = this.val()) {
-      return $(selector + ':contains("' + val + '")');;
+      return $(selector + ':containsi("' + val + '")');
     } else {
       return false;
     }
