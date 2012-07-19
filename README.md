@@ -19,4 +19,4 @@ Simple live search for content on web pages.
       });
     });
 
-View the example at http://thunder-app.heroku.com
+View the example at http://nakajima.github.com/jquery-livesearch/
